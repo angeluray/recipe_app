@@ -57,11 +57,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Blog ROR App <a name="about-project"></a>
+# 📖 Recipe App<a name="about-project"></a>
 
 > Describe your project in 1 or 2 sentences.
 
-**Blog ROR App** is an App created with Ruby on Rails and Postgresql, that allows all users to post, like comments and check previous posts.
+**Blog ROR App** is an App created with Ruby on Rails and Postgresql, that will keep a record of all recipes
 ![Screen Shot 2022-11-22 at 14 49 33](https://user-images.githubusercontent.com/99816838/203434364-919eeb81-a0c9-4781-b37e-f62766996a9e.png)
 
 ## 🛠 Built With <a name="built-with"></a>
