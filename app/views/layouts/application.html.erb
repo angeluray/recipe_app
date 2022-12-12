@@ -11,6 +11,19 @@
   </head>
 
   <body>
+  <div class="nav">
+   <h1>Welcome to Ruby Recipe App</h1>
+      <%if user_signed_in? %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% end %>
+    
+    <%= link_to root_path do %>
+      HOME
+    <% end %>
+    </div>
+    </header>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>

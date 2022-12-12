@@ -1,0 +1,23 @@
+.signup_page {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-inline: 35vw;
+}
+
+.title_signup {
+  text-align: center;
+}
+
+.field_reg {
+  margin: 10px 0;
+}
+
+.field_reg em {
+  font-size: 10px;
+}
+
+.class_name {
+  width: 30vw;
+  border-radius: 5px;
+}
