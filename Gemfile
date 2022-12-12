@@ -46,6 +46,9 @@ gem 'figaro'
 
 gem 'rubocop'
 
+## Authentication Login and Registration
+gem 'devise'
+
 # Use Sass to process CSS
 # gem 'sassc-rails'
 
