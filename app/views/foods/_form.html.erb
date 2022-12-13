@@ -1,0 +1,20 @@
+<%= form_with model: @food do |form| %>
+<div class="edit-card card-post-container">
+
+  <div class='food-name'>
+    <%= form.text_field :name, placeholder: "Name", class:'form-control' %>
+  </div>
+
+  <div class='food-unit'>
+    <%= form.text_field :measurement_unit, placeholder: "Measurement unit", class:'form-control' %>
+  </div>
+
+  <div class='food-unit-price'>
+    <%= form.text_field :price, placeholder: "Unit price", class:'form-control' %>
+  </div>
+
+  <div class='custom-btn'>
+    <%= form.submit "Add food" %>
+  </div>
+</div>
+<% end %>
