@@ -1,0 +1,49 @@
+<div>
+
+  <div class="recipe-header">
+      
+    <div class="button-header">
+      <h2 class><%= @recipe.name%></h2>
+
+      <div class="public">
+        <% if @recipe.public %>
+        <div class="form-check form-switch">
+          <input class="form-check-input"type="checkbox" id="flexSwitchCheckChecked" checked />
+          <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
+        </div>
+
+        <% end %> <% if !@recipe.public %>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"/>
+          <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+
+    <h3 class="r-subtitle">
+      Cooking Time:
+      <p class="r-sub-text"><%= @recipe.cooking_time %> min(s)</p>
+    </h3>
+
+    <h3 class="r-subtitle">
+      Preparation Time:
+      <p class="r-sub-text"><%= @recipe.preparation_time %> min(s)</p>
+    </h3>
+
+    <h3 class="r-sub-text">
+      Steps by step description:
+      <p class="text-muted lh-base"><%= @recipe.description %></p>
+    </h3>
+
+  </div>
+
+  <div class="r-button-generators">
+      <button type = "button">Generate shopping list</button>
+      <%= link_to new_recipe_recipe_food_path(@recipe), :class => "Add ingredients" %>Add Ingredients<% end %>
+  </div>
+
+
+  
+</div>
