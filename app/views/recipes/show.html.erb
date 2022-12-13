@@ -4,8 +4,13 @@
       
     <div class="button-header">
       <h2 class><%= @recipe.name%></h2>
+    </div>
 
-      <div class="public">
+      <div class="publicR">
+      <h3 class="r-subtitle">
+      Preparation Time: <span class="r-sub-text"><%= @recipe.preparation_time %> min(s)</span>
+      </h3>
+      
         <% if @recipe.public %>
         <div class="checker-container">
           <input class="check-box" type="checkbox" id="checkbox-check" checked />
@@ -20,16 +25,14 @@
         <% end %>
       </div>
 
-    </div>
+    
 
     <h3 class="r-subtitle">
-      Cooking Time:
-      <p class="r-sub-text"><%= @recipe.cooking_time %> min(s)</p>
+      Preparation Time: <span class="r-sub-text"><%= @recipe.preparation_time %> min(s)</span>
     </h3>
 
     <h3 class="r-subtitle">
-      Preparation Time:
-      <p class="r-sub-text"><%= @recipe.preparation_time %> min(s)</p>
+      Cooking Time: <span class="r-sub-text"><%= @recipe.cooking_time %> min(s)</span>
     </h3>
 
     <div class="r-sub-text">
@@ -63,10 +66,10 @@
         <td>$<%= rfood.quantity.to_i * rfood.food.price %></td>
         <%# pending cancan %>
           <td class="ingredients-btn">
-            <% if can? :destroy, @recipe %>
+            
             <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: rfood.id), method: :delete, class:"btn"%>
             <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id:rfood.id), class:"btn"%>
-            <% end %>
+          
           </td>
         <%# pending cancan %>
       </tr>

@@ -8,5 +8,6 @@
 
 table, th, td {
   border: 1px solid;
-
+  width: 50vw;
+  margin-inline: 25vw;
 }

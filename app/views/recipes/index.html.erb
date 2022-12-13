@@ -11,10 +11,8 @@
             <div class="recipe-card-header">
              <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
 
-            <% if can? :destroy, @recipe %>
             <%# Pending add cancan to handle authorization to delete a recipe %>
             <%= button_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }%>
-            <% end %>
             </div>
 
             <p class="recipe-description"><%= recipe.description %> </p>

@@ -1,0 +1,16 @@
+.recipe-header {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-inline: 30vw;
+}
+
+.button-header h2 {
+  text-align: center;
+}
+
+.publicR {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
