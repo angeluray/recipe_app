@@ -63,8 +63,10 @@
         <td>$<%= rfood.quantity.to_i * rfood.food.price %></td>
         <%# pending cancan %>
           <td class="ingredients-btn">
+            <% if can? :destroy, @recipe %>
             <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: rfood.id), method: :delete, class:"btn"%>
             <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id:rfood.id), class:"btn"%>
+            <% end %>
           </td>
         <%# pending cancan %>
       </tr>
