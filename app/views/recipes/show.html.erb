@@ -7,15 +7,15 @@
 
       <div class="public">
         <% if @recipe.public %>
-        <div class="form-check form-switch">
-          <input class="form-check-input"type="checkbox" id="flexSwitchCheckChecked" checked />
-          <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
+        <div class="checker-container">
+          <input class="check-box" type="checkbox" id="checkbox-check" checked />
+          <label class="check-label" for="checkbox-check">Public</label>
         </div>
 
         <% end %> <% if !@recipe.public %>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked"/>
-          <label class="form-check-label" for="flexSwitchCheckChecked">Public</label>
+        <div class="checker-container">
+          <input class="check-box" type="checkbox" id="checkbox-check"/>
+          <label class="check-label" for="checkbox-check">Public</label>
         </div>
         <% end %>
       </div>
@@ -32,18 +32,44 @@
       <p class="r-sub-text"><%= @recipe.preparation_time %> min(s)</p>
     </h3>
 
-    <h3 class="r-sub-text">
-      Steps by step description:
-      <p class="text-muted lh-base"><%= @recipe.description %></p>
-    </h3>
+    <div class="r-sub-text">
+      <h3>Step by step description:</h3>
+      <p class="r-sub-text"><%= @recipe.description %></p>
+    </div>
 
   </div>
 
   <div class="r-button-generators">
       <button type = "button">Generate shopping list</button>
-      <%= link_to new_recipe_recipe_food_path(@recipe), :class => "Add ingredients" %>Add Ingredients<% end %>
+      <%= link_to new_recipe_recipe_food_path(@recipe), :class => "Add ingredients" do %>Add Ingredients<% end %>
   </div>
 
+   <table class="recipe-items-table">
+    <thead>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <% @recipe.recipe_foods.each do |rfood|%> 
 
-  
+      <tr>
+        <td><%= rfood.food.name%></th>
+        <td><%= rfood.quantity%><%= rfood.food.measurement_unit  %></td>
+        <td>$<%= rfood.quantity.to_i * rfood.food.price %></td>
+        <%# pending cancan %>
+          <td class="ingredients-btn">
+            <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: rfood.id), method: :delete, class:"btn"%>
+            <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id:rfood.id), class:"btn"%>
+          </td>
+        <%# pending cancan %>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
 </div>

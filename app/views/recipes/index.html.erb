@@ -1,9 +1,15 @@
 <div class="recipes-container">
+    <h2><%= link_to "Add new recipe", new_recipe_path %></h3>
     <ul class="recipes-list">
-        <% @recipes.each do |r|%>
+       <% if @recipes.empty? %>
+        <li>
+            The list is empty, please add a recipe...
+        </li>
+        <% end %>
+        <% @recipes.each do |recipe|%>
         <li>
             <div class="recipe-card-header">
-            <%= link_to r.name, recipe_path(recipe) %>
+             <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
 
             <%# Pending add cancan to handle authorization to delete a recipe %>
             <%= button_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }%>
@@ -11,9 +17,6 @@
 
             <p class="recipe-description"><%= recipe.description %> </p>
         </li>
-        <% if !@recipes %>
-        <li>
-            Please add a recipe...
-        </li>
+        <% end %>
     </ul>
 </div>
