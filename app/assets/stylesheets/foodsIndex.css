@@ -1,0 +1,12 @@
+.addFoods {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-inline: 30vw;
+  padding-bottom: 30px;
+}
+
+table, th, td {
+  border: 1px solid;
+
+}

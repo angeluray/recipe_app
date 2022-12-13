@@ -6,15 +6,15 @@ Rails.application.routes.draw do
   # root "articles#index"
   root 'users#index'
   resources :users do
-    resources :foods, only: [:index, :new, :create]
-    resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-      resources :recipe_foods, only: [:new, :create, :destroy]
+    resources :foods, only: %i[index new create]
+    resources :recipes, only: %i[index show new create destroy] do
+      resources :recipe_foods, only: %i[new create destroy]
     end
   end
-  resources :foods, only: [:index, :new, :create, :destroy]
-  resources :recipes, only: [:index, :show , :new, :create, :edit, :update, :destroy]
+  resources :foods, only: %i[index new create destroy]
+  resources :recipes, only: %i[index show new create edit update destroy]
 
-  resources :recipes, only: [:index, :show, :new, :create, :destroy] do
-    resources :recipe_foods, only: [:new, :create, :destroy, :update, :edit]
+  resources :recipes, only: %i[index show new create destroy] do
+    resources :recipe_foods, only: %i[new create destroy update edit]
   end
 end
