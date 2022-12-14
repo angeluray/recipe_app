@@ -14,12 +14,8 @@
             </div>
 
             <div>
-              <h4> Total food items: <%= recipe.recipe_foods.count %> </h4>
-              <% total = 0 %>
-              <% recipe.recipe_foods.each do |pr_food| %>
-              <% total += (pr_food.quantity.to_i * pr_food.food.price) %>
-              <% end %>
-              <h4> Total price: $<%= total %> </h4>
+               <p><%= "Total price: $#{total_price_recipe(recipe)}" %></p>
+            <p><%= "Number of ingredients: #{total_ingredients_recipe(recipe)}" %></p>
             </div>
         </li>
         <% end %>
