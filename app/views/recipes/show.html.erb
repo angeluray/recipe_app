@@ -25,12 +25,6 @@
         <% end %>
       </div>
 
-    
-
-    <h3 class="r-subtitle">
-      Preparation Time: <span class="r-sub-text"><%= @recipe.preparation_time %> min(s)</span>
-    </h3>
-
     <h3 class="r-subtitle">
       Cooking Time: <span class="r-sub-text"><%= @recipe.cooking_time %> min(s)</span>
     </h3>
@@ -43,10 +37,10 @@
   </div>
 
   <div class="r-button-generators">
-      <button type = "button">Generate shopping list</button>
-      <button class="Add_ingredients">
-      <%= link_to new_recipe_recipe_food_path(@recipe) do %>Add Ingredients<% end %>
-      </button>
+
+      <%= link_to "Generate shopping list", recipe_shopping_lists_path(@recipe) %>
+      <%= link_to new_recipe_recipe_food_path(@recipe), :class => "Add ingredients" do %>Add Ingredients<% end %>
+
   </div>
 
    <table class="recipe-items-table">

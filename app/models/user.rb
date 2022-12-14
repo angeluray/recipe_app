@@ -7,7 +7,9 @@ class User < ApplicationRecord
   has_many :recipes, foreign_key: :user_id, dependent: :destroy
   validates :name, presence: true
 
-  Roles = %i[admin default].freeze
+
+  ROLES = %i[admin default].freeze
+
 
   def is?(requested_role)
     role == requested_role.to_s
