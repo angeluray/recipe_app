@@ -8,16 +8,20 @@
         </li>
         <% end %>
         <% @recipes.each do |recipe|%>
+        <% if can? :read, recipe %>
         <li class="recipeList">
             <div class="recipe-card-header">
              <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
 
             <%# Pending add cancan to handle authorization to delete a recipe %>
+            <% if can? :destroy, recipe %>
             <%= link_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }%>
+            <% end %>
             </div>
 
             <p class="recipe-description"><%= recipe.description %> </p>
         </li>
+        <% end %>
         <% end %>
     </ul>
 </div>

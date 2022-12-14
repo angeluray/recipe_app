@@ -39,8 +39,9 @@
   <div class="r-button-generators">
 
       <%= link_to "Generate shopping list", recipe_shopping_lists_path(@recipe) %>
+      <% if can? :update, @recipe %>
       <%= link_to new_recipe_recipe_food_path(@recipe), :class => "Add ingredients" do %>Add Ingredients<% end %>
-
+      <% end %>
   </div>
 
    <table class="recipe-items-table">
