@@ -1,5 +1,5 @@
 class RecipeFoodsController < ApplicationController
-    before_action :authenticate_user!
+  before_action :authenticate_user!, :set_recipe_food, only: %i[show edit update destroy]
 
   def index
     @foods = Food.all
@@ -32,7 +32,27 @@ class RecipeFoodsController < ApplicationController
     redirect_to recipe_path(@recipe_food.recipe_id)
   end
 
+  def update
+    @recipe = Recipe.find_by(id: params[:recipe_id])
+
+    respond_to do |format|
+      if @recipe_food.update(recipe_foods_params)
+        format.html do
+          redirect_to recipe_path(@recipe), notice: 'Recipe food was successfully updated.'
+        end
+        format.json { render :show, status: :ok, location: @recipe_food }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @recipe_food.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
+
+  def set_recipe_food
+    @recipe_food = RecipeFood.find(params[:id])
+  end
 
   def recipe_foods_params
     params.require(:recipe_food).permit(:quantity, :food_id)
