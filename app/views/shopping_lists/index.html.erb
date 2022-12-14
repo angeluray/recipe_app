@@ -16,7 +16,7 @@
   </thead>
 
     <tbody>
-      <% @shopping_lists.each do |sp_food| %>
+      <% @recipe_foods.each do |sp_food| %>
         <tr>
           <td><%= sp_food.food.name %></td>
           <td><%= sp_food.quantity %><%= sp_food.food.measurement_unit %></td>

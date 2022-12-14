@@ -62,6 +62,7 @@
         <td><%= rfood.quantity%><%= rfood.food.measurement_unit  %></td>
         <td>$<%= rfood.quantity.to_i * rfood.food.price %></td>
         <%# pending cancan %>
+          
           <td class="ingredients-btn">
             
             <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: rfood.id), method: :delete, class:"btn"%>
