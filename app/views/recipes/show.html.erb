@@ -37,8 +37,10 @@
   </div>
 
   <div class="r-button-generators">
+
       <%= link_to "Generate shopping list", recipe_shopping_lists_path(@recipe) %>
       <%= link_to new_recipe_recipe_food_path(@recipe), :class => "Add ingredients" do %>Add Ingredients<% end %>
+
   </div>
 
    <table class="recipe-items-table">
@@ -62,7 +64,9 @@
           <td class="ingredients-btn">
             
             <%=button_to "Delete", recipe_recipe_food_path(recipe_id: @recipe.id, id: rfood.id), method: :delete, class:"btn"%>
+            <button>
             <%=link_to "Modify", edit_recipe_recipe_food_path(recipe_id: @recipe.id, id:rfood.id), class:"btn"%>
+            </button>
           
           </td>
         <%# pending cancan %>

@@ -1,0 +1,35 @@
+ul {
+  padding-inline-start: 0 !important;
+}
+
+.recipeList {
+  display: flex;
+  width: 50vw;
+  margin-inline: 25vw;
+  border: 1px solid #000;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: 5px;
+  border-radius: 3px;
+}
+
+.recipe-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rfood-input-container-add {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control-add {
+  width: 63px;
+  margin: 0 0 10px 0;
+}
+
+.rfood-input-container-bootoAdd,
+.update-rfood-input_chef {
+  margin: 10px 0;
+}
