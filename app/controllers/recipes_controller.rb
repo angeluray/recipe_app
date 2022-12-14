@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.includes([:user]).all
+    @recipes = Recipe.all.includes([:user])
   end
 
   def show
