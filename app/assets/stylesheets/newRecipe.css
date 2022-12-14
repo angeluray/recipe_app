@@ -1,0 +1,21 @@
+.newRecepForm {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-inline: 30vw;
+}
+
+.form-locaton {
+  margin: 5px 0;
+}
+
+.form-control {
+  width: 40vw;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.add-recipe-btn {
+  box-shadow: 3px 3px #888;
+  margin-bottom: 30px;
+}

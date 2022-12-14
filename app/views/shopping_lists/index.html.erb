@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between m-5">
+    <h1>Shopping Lists</h1>
+	<div>
+		<h4>Amount of food items to buy: <%= @recipe_foods.count %> </h4>
+		<h4>Total price of food needed: <%= @total %></h4>
+	</div>
+</div>
+
+<table class="recipe-items-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+    <tbody>
+      <% @shopping_lists.each do |sp_food| %>
+        <tr>
+          <td><%= sp_food.food.name %></td>
+          <td><%= sp_food.quantity %><%= sp_food.food.measurement_unit %></td>
+          <td><span>$<%= sp_food.food.price * sp_food.quantity.to_i%></span></td>
+      <% end %>
+    </tbody>
+
+</table>

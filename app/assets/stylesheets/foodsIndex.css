@@ -1,0 +1,62 @@
+.addFoods {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  margin-inline: 30vw;
+  padding-bottom: 30px;
+}
+
+.addFoods button {
+  margin-bottom: 30px;
+  width: 100px;
+  align-self: flex-end;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+  width: 40vw;
+}
+
+tr:nth-child(odd) {
+  background-color: #c1bebe;
+}
+
+th {
+  background-color: rgb(117, 115, 115);
+}
+
+.r-button-generators {
+  display: flex;
+  width: 40vw;
+  margin-inline: 30vw;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 2px solid black;
+}
+
+.ingredients-btn {
+  display: flex;
+  width: auto;
+  justify-content: space-around;
+}
+
+.delete-input-food {
+  display: flex;
+  justify-content: center;
+}
+
+.Add_ingredients {
+  box-shadow: 3px 3px #888;
+}
+
+.recipe-items-table {
+  margin-inline: 30vw;
+  margin-top: 20px;
+}
+
+.food-unit,
+.custom-btn {
+  margin: 5px 0;
+}

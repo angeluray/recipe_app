@@ -1,0 +1,23 @@
+<h2 class="recipeTitleCont"><%= link_to "Add new recipe", new_recipe_path %></h2>
+<div class="recipes-container">
+    
+    <ul class="recipes-list">
+       <% if @recipes.empty? %>
+        <li>
+            The list is empty, please add a recipe...
+        </li>
+        <% end %>
+        <% @recipes.each do |recipe|%>
+        <li class="recipeList">
+            <div class="recipe-card-header">
+             <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
+
+            <%# Pending add cancan to handle authorization to delete a recipe %>
+            <%= link_to 'Remove', recipe_path(recipe), method: :delete, data: { confirm: 'Are you sure?' }%>
+            </div>
+
+            <p class="recipe-description"><%= recipe.description %> </p>
+        </li>
+        <% end %>
+    </ul>
+</div>

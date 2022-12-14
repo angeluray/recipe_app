@@ -5,6 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :foods, foreign_key: :user_id, dependent: :destroy
   has_many :recipes, foreign_key: :user_id, dependent: :destroy
-
   validates :name, presence: true
+
+  ROLES = %i[admin default].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end

@@ -11,8 +11,9 @@
   </head>
 
   <body>
-  <nav>
-    <ul>
+  <nav class="nav">
+  <h1>Welcome to Ruby Recipe App</h1>
+    <ul class="nav_links">
       <li>
         <%= link_to root_path do %>
         Home
@@ -24,17 +25,25 @@
         <% end %>
       </li>
       <li>
-        <%if user_signed_in? %>
-        <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
-      <% end %>
+        <%= link_to recipes_path do %>
+        Recipes
+        <% end %>
+      </li>
+      <li>
+        <%= link_to public_recipes_index_path do %>
+        Public recipes
+        <% end %>
       </li>
     </ul>
   </nav> <br>
-   <h1>Welcome to Ruby Recipe App</h1>
+   
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= turbo_frame_tag "modal" %>
     <%= yield %>
+    <%if user_signed_in? %>
+        <%= button_to "Sign Out", destroy_user_session_path, method: :delete %>
+      <% end %>
   </body>
 </html>

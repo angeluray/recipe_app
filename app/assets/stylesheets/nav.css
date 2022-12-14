@@ -1,5 +1,18 @@
 .nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+}
+
+.nav_links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav_links li {
+  padding: 0 7px;
+}
+
+.nav_links a {
+  text-decoration: none;
 }
