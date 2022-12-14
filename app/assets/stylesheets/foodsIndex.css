@@ -12,13 +12,16 @@
   align-self: flex-end;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid;
   width: 40vw;
-  /* margin-inline: 30vw; */
 }
 
-tr:nth-child(odd) {background-color: #c1bebe;}
+tr:nth-child(odd) {
+  background-color: #c1bebe;
+}
 
 th {
   background-color: rgb(117, 115, 115);
@@ -45,7 +48,7 @@ th {
 }
 
 .Add_ingredients {
-  box-shadow: 3px 3px #888888;
+  box-shadow: 3px 3px #888;
 }
 
 .recipe-items-table {
