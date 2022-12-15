@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     @user.save
   end
 
-  it "is created succesfully" do
+  it 'is created succesfully' do
     expect(@user).to be_valid
   end
 
@@ -22,7 +22,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'is not valid without password' do
-    @user.password = ""
+    @user.password = ''
     expect(@user).not_to be_valid
   end
 end
