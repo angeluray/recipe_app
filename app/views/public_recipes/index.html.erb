@@ -1,5 +1,5 @@
 <div>
-<h1>Public Recipes</h1>
+<h1 class="publicTitleRecep">Public Recipes</h1>
 <ul class="recipes-list">
        <% if @recipes.empty? %>
         <li>
@@ -7,13 +7,13 @@
         </li>
         <% end %>
         <% @recipes.each do |recipe|%>
-        <li>
+        <li class="publicRec">
             <div class="recipe-card-header">
              <h3><%= link_to recipe.name, recipe_path(recipe) %></h3>
              <h4>By: <%= recipe.user.name %> </h4>
             </div>
 
-            <div>
+            <div class="info-card-pub">
                <h4> Total food items: <%= recipe.recipe_foods.count %> </h4>
               <p><%= "Total price: $#{total_price_recipe(recipe)}" %></p>
               
