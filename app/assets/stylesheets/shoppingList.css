@@ -1,0 +1,15 @@
+.justify-content-between {
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin-inline: 10vw;
+  align-items: center;
+}
+
+.shoppinglistitems {
+  display: flex;
+}
+
+.itemsInfo {
+  margin-right: 15px;
+}
