@@ -5,7 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show; end
+  def show
+    @user = current_user
+  end
 
   def new
     @user = User.new
