@@ -59,6 +59,10 @@ After you're finished please remove all the comments and instructions!
 
 
 **Recipe App** is an App created with Ruby on Rails and Postgresql, that will keep a record of all recipes
+![Screen Shot 2022-12-15 at 09 52 28](https://user-images.githubusercontent.com/99816838/207907180-7ff5383a-0ece-4759-9a70-bd12828f9b4b.png)
+![Screen Shot 2022-12-15 at 09 52 58](https://user-images.githubusercontent.com/99816838/207907197-123a67c7-c9cd-4142-8ec2-54f1d1f8f83f.png)
+![Screen Shot 2022-12-15 at 09 53 40](https://user-images.githubusercontent.com/99816838/207907212-9f0729f8-1ba4-4ea6-8d73-df7a932b2796.png)
+![Screen Shot 2022-12-15 at 09 54 32](https://user-images.githubusercontent.com/99816838/207907229-fe97817a-d9de-49cb-8402-ebc89d32dc1d.png)
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -109,6 +113,8 @@ To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
+have installed Ruby on your system check with Ruby -v
+
 In order to run this project you need:
 
 ### Setup
@@ -119,10 +125,10 @@ git clone https://github.com/Flunavgt/recipe_app.git
 
 ### Install
 
-Install this project with:
+type : cd recipe_app
 
-cd recipe_app
-bundle install
+
+Type : bundle install
 
 ### Usage
 
