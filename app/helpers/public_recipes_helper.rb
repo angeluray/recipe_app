@@ -1,2 +1,2 @@
-module PublicRecipesHelpers
+module PublicRecipesHelper
 end

@@ -1,2 +1,2 @@
-module ShoppingListsHelpers
+module ShoppingListsHelper
 end
